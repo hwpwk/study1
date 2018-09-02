@@ -1,2 +1,1 @@
-# study1
-gakushu
+Learning with books
