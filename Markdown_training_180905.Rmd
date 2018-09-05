@@ -1,0 +1,41 @@
+---
+title: "report1"
+author: "hwpwk"
+date: "2018年9月5日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2) # diamondsデータセットを読み込むため
+```
+
+# 目的
+　今回の実験は○○○○するために行う。
+
+# データインポート
+```{r}
+#save(diamonds, file = "diamonds.RData")
+#load(file = "diamonds.RData")
+DT <- diamonds
+DT
+```
+このデータは～～なので、、、
+
+# データの可視化
+# chunkはctrl+Alt+iで設定可能
+```{r}
+ggplot(DT) + geom_point(aes(x = carat, y = price))
+```
+
+# GLM
+ 散布図からはリンク関数をlogとして、分布をガンマとしたものが適切だと考えたので次のようにGLMを実施する
+```{r}
+model <- glm(formula = price ~ carat,
+             family = 'Gamma'(link ='log'),data = DT)
+
+summary(model)
+```
+
+# まとめ
+　今回の結果から～～と言える。
