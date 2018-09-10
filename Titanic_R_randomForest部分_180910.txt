@@ -1,0 +1,33 @@
+﻿# 今回はランダムフォレストを選択
+install.packages('randomForest')
+library(randomForest)
+
+# The response has five or fewer unique values.というエラー
+# 「予測結果の値が5種類以下しか無いが、本当にregressionがしたいのか? ( classification がしたいのでは? )」という意味
+# 目的変数がlogical型になっていると、regression モード になるっぽい。 
+# 目的変数をfactor型に変換してあげればclassification モードになる。
+# 参考:http://shinya131-note.hatenablog.jp/entry/2015/10/26/233823
+df_train2$Survived <- as.factor(df_train2$Survived)
+
+model <- randomForest(Survived~.,
+                      data = df_train2)
+model
+# OOB estimate of  error rate: 17.96%
+
+
+
+# 特徴量毎の重要度を表示
+importance(model)
+# 複数行を1度にコメントアウトするには コメント箇所をドラッグしCTRL + SHIFT + C
+# MeanDecreaseGini
+# PassengerId         48.90437
+# Pclass              33.20005
+# Sex                 98.02156
+# Age                 49.70134
+# SibSp               15.60726
+# Parch               12.64400
+# Fare                64.11726
+# Embarked            10.86850
+
+# 特徴量の重要度をプロット
+varImpPlot(model)
