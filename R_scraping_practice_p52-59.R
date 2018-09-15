@@ -12,11 +12,13 @@ url_res <- read_html(url)
 # 読み込むことができたかどうかを確認
 url_res
 
-### 下記css = だとタイトルの取得ができず######
-title <- read_html(url) %>% 
-  html_nodes(css = 'html > head > title') %>% 
+# 下記css = だとタイトルの取得ができず
+# →できました。
+title3 <- read_html(url) %>% 
+  html_nodes(css = 'head > title') %>% 
   html_text()
-##############################################
+title3
+
 
 # urlからtitle要素を抽出
 url_title <- html_nodes(url_res, xpath = '/html/head/title')
