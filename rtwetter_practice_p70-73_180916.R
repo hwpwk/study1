@@ -2,11 +2,11 @@ install.packages('rtweet')
 library(rtweet)
 
 
-consumerKey <- '5Csdd2iaISW1bg2oeZxpoTMvh'
-consumerSecret <- 'LAH3U4SqXPF2V8iP41IzjE6wLDkkxhXng0pqWSWt8Ih2XpEDwn'
-appname <- 'abe_test_abe'
-accesstokenkey <- '959308856-exfnSMqXHpHCJABpuRAn8goNwvfljDzErwNVtt3V'
-accesstokensecret <- 'KKtX4BwuPCtB3nxQBVJpMoK0quSjLcsbCUtq6mWjnRbmE'
+consumerKey <- '...'
+consumerSecret <- '...'
+appname <- '...'
+accesstokenkey <- '...'
+accesstokensecret <- '...'
 
 twitter_token <- create_token(
   app <- appname,
