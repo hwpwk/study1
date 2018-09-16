@@ -1,13 +1,14 @@
 install.packages('rtweet')
 library(rtweet)
 
-
+# トークン情報
 consumerKey <- '...'
 consumerSecret <- '...'
 appname <- '...'
 accesstokenkey <- '...'
 accesstokensecret <- '...'
 
+# 認証
 twitter_token <- create_token(
   app <- appname,
   consumer_key = consumerKey,
@@ -27,3 +28,5 @@ rt <- search_tweets(
 )
 
 # これでrtに「データサイエンティスト」検索結果のデータが格納される
+
+# 参考書籍:RユーザのためのRStudio［実践］入門 P.70-73
