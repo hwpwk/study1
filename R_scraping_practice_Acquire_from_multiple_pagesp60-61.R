@@ -29,3 +29,5 @@ dat <- dplyr::bind_rows(kabukas)
 tail(dat, 10)
 
 str(dat)
+
+# 参考書籍:RユーザのためのRStudio［実践］入門 P.60-61
